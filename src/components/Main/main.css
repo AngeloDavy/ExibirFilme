@@ -1,0 +1,127 @@
+/* Container da galeria */
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1170px;
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Responsividade para telas pequenas (máximo 425px) */
+  @media (max-width: 425px) {
+    .gallery {
+      flex-direction: column;
+      padding: 0;
+    }
+  }
+  
+  /* Cartões da galeria */
+  .gallery-card {
+    width: 31%;
+    height: 400px;
+    margin-bottom: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFF;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: 0.6s ease;
+    position: relative; /* Necessário para aplicar o overlay de fundo */
+  }
+  
+  /* Responsividade para telas pequenas (máximo 425px) */
+  @media (max-width: 425px) {
+    .gallery-card {
+      width: 90%;
+      margin-bottom: 6%;
+    }
+  }
+  
+  /* Títulos dos cartões */
+  .gallery-card-title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    z-index: 1; /* Garante que o título fique visível acima da sobreposição */
+  }
+  
+  /* Botão dos cartões */
+  .gallery-card-btn {
+    padding: 0.6rem 2rem;
+    border: 2px solid #FFF;
+    color: #FFF;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1; /* Garante que o botão fique visível acima da sobreposição */
+  }
+  
+  /* Efeito do botão ao passar o mouse */
+  .gallery-card-btn:hover {
+    background-color: #FFF;
+    color: #000;
+  }
+  
+  /* Efeitos de hover nos cartões */
+  .gallery-card:hover {
+    background-size: 110%;
+    filter: grayscale(0%);
+  }
+  
+  .gallery-card:hover::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    background-position: center;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  
+  /* Adicionando imagem de fundo específica para cada cartão */
+  .gallery-card[data-image="animais"] {
+    background-image: url("../img/animais.jpg");
+  }
+  
+  .gallery-card[data-image="arquitetura"] {
+    background-image: url("../img/arquitetura.jpg");
+  }
+  
+  .gallery-card[data-image="cidade"] {
+    background-image: url("../img/cidade.jpg");
+  }
+  
+  .gallery-card[data-image="decoracao"] {
+    background-image: url("../img/decoracao.jpg");
+  }
+  
+  .gallery-card[data-image="esportes"] {
+    background-image: url("../img/esportes.jpg");
+  }
+  
+  .gallery-card[data-image="natureza"] {
+    background-image: url("../img/natureza.jpg");
+  }
+  
+  .gallery-card[data-image="paisagem"] {
+    background-image: url("../img/paisagem.jpg");
+  }
+  
+  .gallery-card[data-image="pessoas"] {
+    background-image: url("../img/pessoas.jpg");
+  }
+  
+  .gallery-card[data-image="refeicoes"] {
+    background-image: url("../img/refeicoes.jpg");
+  }
+  
